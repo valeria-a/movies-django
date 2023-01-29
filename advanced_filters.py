@@ -1,7 +1,7 @@
 import datetime
 import os
 
-from django.db.models import Count, Avg, Max, Min
+from django.db.models import Avg, Min, Max, Count
 
 os.environ["DJANGO_SETTINGS_MODULE"] = "movies.settings"
 
@@ -43,8 +43,12 @@ def chaining_querysets():
 
 # https://docs.djangoproject.com/en/4.1/topics/db/aggregation/
 def aggregation():
+    # count all movies
+    # ret_val = Movie.objects.all().count()
+
     # avg duration across all movies
-    ret_val = Movie.objects.aggregate(Avg('duration_in_min'))
+    ret_val = Movie.objects.aggregate(
+        Avg('duration_in_min'), Min('duration_in_min'), Max('duration_in_min'))
     print(ret_val)
 
 
@@ -63,9 +67,9 @@ def annotation():
         print(r, r.actors_count)
 
 def annotation2():
-    ret_val = Movie.objects.annotate(
-        youngest_actor=Max('actors__birth_year'),
-        oldest_actor=Min('actors__birth_year'))
+    # ret_val = Movie.objects.annotate(
+    #     youngest_actor=Max('actors__birth_year'),
+    #     oldest_actor=Min('actors__birth_year'))
 
     ret_val = Movie.objects.annotate(
         youngest_actor=datetime.date.today().year - Max('actors__birth_year'),
@@ -92,7 +96,11 @@ def raw_query():
 
 
 if __name__ == '__main__':
+    # aggregation()
     # filter_movies()
     # relationships()
     # annotation()
-    annotation2()
+    # annotation2()
+    # m = Movie.objects.get(id=3)
+    # print(Movie.objects.filter(movieactor__salary__gt=2000000))
+    group_by()
