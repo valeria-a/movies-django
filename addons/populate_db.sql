@@ -1,22 +1,22 @@
-INSERT INTO public.actors ("name",birth_year) VALUES
-	 ('David Craig',1968),
-	 ('Edward Norton',1969),
-	 ('John Travolta',1954),
-	 ('Uma Thurman',1970),
-	 ('Samuel L. Jackson',1948),
-	 ('Sam Worthington',1976),
-	 ('Zoe Saldana',1978),
-	 ('Jamie Foxx',1967),
-	 ('Leonardo DiCaprio',1974);
+INSERT INTO public.actors ("id", "name",birth_year) VALUES
+	 (1, 'David Craig',1968),
+	 (5, 'Edward Norton',1969),
+	 (6, 'John Travolta',1954),
+	 (7, 'Uma Thurman',1970),
+	 (8, 'Samuel L. Jackson',1948),
+	 (9, 'Sam Worthington',1976),
+	 (10,'Zoe Saldana',1978),
+	 (11,'Jamie Foxx',1967),
+	 (12,'Leonardo DiCaprio',1974);
 
-INSERT INTO public.movies ("name",description,duration,"year",pic_url) VALUES
-	 ('Glass Onion','Famed Southern detective Benoit Blanc travels to Greece for his latest case.',139.0,2022,'https://upload.wikimedia.org/wikipedia/en/6/62/Glass_Onion_poster.jpg'),
-	 ('Pulp Fiction','The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.',154.0,1994,'https://www.imdb.com/title/tt0110912/mediaviewer/rm1959546112/?ref_=tt_ov_i'),
-	 ('Inception','A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O., but his tragic past may doom the project and his team to disaster.',148.0,2010,NULL),
-	 ('The Departed','An undercover cop and a mole in the police attempt to identify each other while infiltrating an Irish gang in South Boston.',151.0,2006,NULL),
-	 ('Guardians of the Galaxy','A group of intergalactic criminals must pull together to stop a fanatical warrior with plans to purge the universe.',121.0,2014,NULL),
-	 ('Avatar','A paraplegic Marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.',162.0,2010,NULL),
-	 ('Django Unchained','With the help of a German bounty-hunter, a freed slave sets out to rescue his wife from a brutal plantation-owner in Mississippi.',165.0,2014,NULL);
+INSERT INTO public.movies ("id", "name",description,duration,"year",pic_url) VALUES
+	 (1,'Glass Onion','Famed Southern detective Benoit Blanc travels to Greece for his latest case.',139.0,2022,'https://upload.wikimedia.org/wikipedia/en/6/62/Glass_Onion_poster.jpg'),
+	 (3,'Pulp Fiction','The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.',154.0,1994,'https://www.imdb.com/title/tt0110912/mediaviewer/rm1959546112/?ref_=tt_ov_i'),
+	 (4,'Inception','A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O., but his tragic past may doom the project and his team to disaster.',148.0,2010,NULL),
+	 (5,'The Departed','An undercover cop and a mole in the police attempt to identify each other while infiltrating an Irish gang in South Boston.',151.0,2006,NULL),
+	 (6,'Guardians of the Galaxy','A group of intergalactic criminals must pull together to stop a fanatical warrior with plans to purge the universe.',121.0,2014,NULL),
+	 (7,'Avatar','A paraplegic Marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.',162.0,2010,NULL),
+	 (8,'Django Unchained','With the help of a German bounty-hunter, a freed slave sets out to rescue his wife from a brutal plantation-owner in Mississippi.',165.0,2014,NULL);
 
 INSERT INTO public.movie_actors (salary,main_role,actor_id,movie_id) VALUES
 	 (2000000,true,1,1),
