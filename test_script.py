@@ -1,11 +1,13 @@
 import os
 
+from django.db.models import Min, Max, Count
+
 os.environ["DJANGO_SETTINGS_MODULE"] = "movies.settings"
 
 import django
 django.setup()
 
-from movies_app.models import Movie, Rating
+from movies_app.models import Movie, Rating, Actor
 
 # new_movie = Movie(
 #     name='Glass Onion',
@@ -18,9 +20,15 @@ from movies_app.models import Movie, Rating
 # new_movie.save()
 
 
-movies = Movie.objects.all()
-for movie in movies:
-    print(movie.description)
-    print(movie.duration_in_min)
+# movies = Movie.objects.all()
+# for movie in movies:
+#     print(movie.description)
+#     print(movie.duration_in_min)
     # new_rating = Rating(movie=movie, rating=9)
     # new_rating.save()
+
+# all_actors = Actor.objects.annotate(min_rating=Min('movie__rating__rating'), max_rating=Max('movie__rating__rating'))
+# for a in all_actors:
+#     print(a.name, a.min_rating, a.max_rating)
+
+# all_actors = Actor.objects.annotate(Count('movie'))
