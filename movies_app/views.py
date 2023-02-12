@@ -95,8 +95,10 @@ def movie_actors(request, movie_id):
             serializer.create(serializer.validated_data)
             return Response()
 
-# from django.http import HttpResponse
-#
-#
-# def index(request):
-#     return HttpResponse("Movies home page")
+
+def index(request):
+    # return render(request, "static/imdb.html")
+    return render(request, "static/index.html")
+
+def browser_storage(request):
+    return render(request, "browser_storage.html")

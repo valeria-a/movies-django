@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Notice that each input field must have a name attribute to be submitted.
+    If the name attribute is omitted, the value of the input field will not be sent at all. -->
+    <form action="https://your-web-server.com/specific-path" method="post">
+
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" value="John">
+        <br>
+        <p>Password input</p>
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username"><br>
+        <label for="pwd">Password:</label><br>
+        <input type="password" id="pwd" name="pwd" onchange="console.log(value)">
+        <br>
+        <input type="submit" value="Send to server">
+    </form> 
+
+</body>
+</html>

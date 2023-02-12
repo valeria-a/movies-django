@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="base_scripts.js">
+    </script>
+</head>
+
+<img id=imgid >
+
+<body onload="document.getElementById('ttt').innerHTML=Date()">
+
+    <div style="display: flex; flex-direction: row; justify-content: space-between;">
+        <h2>Date example</h2>
+        <p id="ttt"></p>
+    </div>
+
+    <h2>A beautiful day!</h2>
+
+    <button type="button" onclick="displayDateNew('demo', 'refresh_btn')" ondblclick="window.alert('Hello')">Click me to display Date and Time</button>
+    <input type="text" id="fname" value="AAAA" onchange="duplicateText()">
+    <p id="user_text"></p>
+    <p id ="demo">Date and time will apear here</p>
+
+    <button id="refresh_btn" style="visibility: hidden;" onclick="stopRefresh()">Stop refresh</button>
+
+    <script>
+        console.log(intervalID)
+    </script>
+
+</body>
+</html>

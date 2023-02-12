@@ -7,10 +7,17 @@ from movies_app.models import *
 #         fields = '__all__'
 
 
+class MovieOverviewSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Movie
+        # exclude = ['description', 'pic_url', 'actors']
+        exclude = ['pic_url', 'actors']
+
+
 class MovieSerializer(serializers.ModelSerializer):
     class Meta:
         model = Movie
-        fields = ['id', 'name', 'description', 'duration_in_min', 'release_year', 'pic_url']
+        exclude = ['actors']
 
 
 class ActorSerializer(serializers.ModelSerializer):

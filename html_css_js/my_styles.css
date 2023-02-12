@@ -1,0 +1,16 @@
+h4 {
+    color: aliceblue;
+    background-color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.dark {
+    color: white;
+    background-color: black;
+}
+
+.very_important {
+    font-family: monospace;
+    font-weight: 800;
+    text-decoration: underline;
+}
