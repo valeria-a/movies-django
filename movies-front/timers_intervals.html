@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        function start(event) {
+            document.getElementById('finished').innerText = 'timer started'
+            // elem = document.getElementById('pp')
+            seconds = document.getElementById('input_sec').value
+            console.log('seting timer for', seconds)
+            //timerId = 239
+            timerId = setTimeout(
+                () => {
+                    document.getElementById('finished').innerText = 'done'
+
+                },
+                seconds * 1000
+            )
+            event.target.setAttribute('disabled', true)
+            document.getElementById('cancel_btn').removeAttribute('disabled')
+            document.getElementById('cancel_btn').onclick = () => {
+                clearTimeout(timerId)
+                event.target.removeAttribute('disabled')
+                document.getElementById('cancel_btn').setAttribute('disabled', true)
+            }
+
+            // document.getElementById('cancel_btn').onclick = clearTimeout(timerId)
+
+            // () => clearTimeout(timerId)
+            // function foo() {
+            //     clearTimeout(239)
+            // }
+            // document.getElementById('cancel_btn').onclick = foo
+
+        }
+
+    </script>
+</head>
+<body>
+    
+    <input type="number" value="3" id="input_sec">
+    <p id="pp">Hello</p>
+    <button onclick="start(event)">start timer</button>
+    <button id='cancel_btn' onclick="cancel()" disabled>Cancel timer</button>
+    <p id="finished"></p>
+
+</body>
+</html>
