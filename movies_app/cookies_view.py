@@ -11,7 +11,9 @@ def cookies_test(request):
 
     if request.method == 'GET':
         movies_qs = Movie.objects.all()
+
     movie_to_exclude = None
+    print(f"Cookies received: {request.COOKIES}")
 
     try:
         if request.COOKIES.get('last_viewed_movie_id'):
@@ -26,7 +28,8 @@ def cookies_test(request):
 
     response = Response(serializer.data)
 
-    response.set_cookie('last_viewed_movie_id', value=request.COOKIES.get('last_viewed_movie_id'))
+    # response.set_cookie('last_viewed_movie_id',
+    #                     value=request.COOKIES.get('last_viewed_movie_id'))
 
     return response
 

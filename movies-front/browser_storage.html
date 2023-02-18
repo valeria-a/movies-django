@@ -15,7 +15,7 @@
 
         window.onload = () => {
             // fetch('http://127.0.0.1:8000/api/movies')
-            fetch('https://f84c-85-250-238-98.eu.ngrok.io/api/cookies_test')
+            fetch('https://c01e-31-154-74-222.eu.ngrok.io/api/cookies_test')
             .then((response) => response.json())
             .then((data) => {
 
@@ -37,9 +37,7 @@
                     header.setAttribute('class', 'accordion-header')
                     header.setAttribute('id', `heading_${label_id}`)
                     movieItem.appendChild(header)
-
-                    
-
+     
                     headerButton = document.createElement('button')
                     headerButton.innerText = movie.name
                     headerButton.setAttribute('class', 'accordion-button')
