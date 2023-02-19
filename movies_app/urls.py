@@ -7,13 +7,18 @@ from .movies_viewset import MoviesViewSet
 # automatically defining urls for MoviesViewSet
 router = DefaultRouter()
 router.register(r'api/movies', MoviesViewSet, basename='movie')
+# router.register(r'api/actoris', ActorsViewSet, basename='actor')
+# api/movies #POST -> create GET -> list
+# api/movies/<id> GET -> retrieve PUT PATCH -> update DELETE -> destroy
+# api/movies/<id>/actors
 
 
 urlpatterns = [
 
     path('', views.index),
     path('browser_storage', views.browser_storage),
-    path('api/cookies_test', cookies_view.cookies_test)
+    path('api/cookies_test', cookies_view.cookies_test),
+
 
 
     # path('api/movies', views.movies_list),
